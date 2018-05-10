@@ -52,18 +52,17 @@ public class CSVSplitter {
     public static void main(String[] args) {
         Utils.config(".");
         if (args.length == 0) {
-            System.out.println("Please specify 3 args:"
+            System.out.println("Please specify 2 args:"
                     + "\n\t 1 - input directory"
-                    + "\n\t 2 - output directory name"
-                    + "\n\t 3 - label file name");
+                    + "\n\t 2 - output directory name");
             System.exit(0);
         }
         CSVSplitter cs = new CSVSplitter();
-        cs.processDirectory(args[0], args[1], args[2]);
+        cs.processDirectory(args[0], args[1]);
 
     }
 
-    public void processDirectory(String inDirName, String outDirName, String labelFileName) {
+    public void processDirectory(String inDirName, String outDirName) {
 
         this.inDir = new File(inDirName);
         if (!inDir.exists()) {
