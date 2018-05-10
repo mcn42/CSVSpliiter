@@ -1,2 +1,4 @@
-Apr 26, 2018 2:47:32 PM org.mtahq.csv.splitter.CSVSplitter split
-INFO: Processing file /Users/mnilsen/xethru/xethru_recording_20180424_093503_c3ca18e4-9b4c-4ff1-b484-1bfec5030e12/xethru_presence_movinglist_20180424_093504.csv
+May 10, 2018 8:50:18 AM org.mtahq.csv.splitter.CSVSplitter split
+INFO: Processing file /Users/mnilsen/NetBeansProjects/CSVSplitter/input_042418/xethru_presence_movinglist_20180424_095656.csv
+May 10, 2018 8:50:19 AM org.mtahq.csv.splitter.CSVSplitter split
+INFO: Processing file /Users/mnilsen/NetBeansProjects/CSVSplitter/input_042418/xethru_presence_movinglist_20180424_093504.csv

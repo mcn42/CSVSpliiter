@@ -33,7 +33,7 @@ public class CSVSplitter {
     private final int firstDataLine = Utils.getAppProperties().getInt(SplitterAppProperties.DEFAULT_FIRST_DATA_LINE);
     private final int timestampColIndex = Utils.getAppProperties().getInt(SplitterAppProperties.DEFAULT_TSTAMP_COLUMN_IDX);
 
-    private final String[] LABEL_FILE_HEADER = {"filename", "passengers", "bystanders", "operation"};
+    private final String[] LABEL_FILE_HEADER = {"filename","firstTime","lastTime", "passengers", "bystanders", "operation","notes"};
     private final String[] DATA_FILE_HEADER = {"TimeStamp", "Counter", "PresenceState",
         "MovementIntervalCount", "DetectionCount", "MovementSlowItem",
         "MovementFastItem", "DetectionDistance", "DetectionRadarCrossSection",
@@ -43,8 +43,10 @@ public class CSVSplitter {
     private FileFilter csvFiles = (File pathname) -> pathname.getName().endsWith(".csv") || pathname.getName().endsWith(".CSV");
     private File inDir;
     private File outDir;
-    private File labelFile;
     private CSVWriter labelFileWriter = null;
+    
+    private String firstTstamp;
+    private String lastTstamp;
 
     public CSVSplitter() {
     }
@@ -117,8 +119,10 @@ public class CSVSplitter {
                 }
                 if (firstTime == null) {
                     firstTime = this.getTimestampForLine(line);
+                    this.firstTstamp = line[this.timestampColIndex];
                 } else {
                     Date linetime = this.getTimestampForLine(line);
+                    this.lastTstamp = line[this.timestampColIndex];
                     if (linetime == null) {
                         line = reader.readNext();
                         count++;
@@ -158,7 +162,7 @@ public class CSVSplitter {
         String fname = String.format("%s_%s.csv", baseFileName, fileIndex);
         File f = new File(outDir, fname);
         //  Write row to label file
-        String[] row = {fname, "0", "0", "1"};
+        String[] row = {fname, this.firstTstamp,this.lastTstamp,"0", "0", "1",""};
         this.labelFileWriter.writeNext(row);
         CSVWriter writer = new CSVWriter(new FileWriter(f));
         writer.writeNext(DATA_FILE_HEADER);
