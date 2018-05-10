@@ -11,7 +11,7 @@ package org.mtahq.csv.splitter;
 public enum SplitterAppProperties implements IAppProperty {
 
     DEFAULT_OUTPUT_DIRECTORY_NAME("output"),
-    DEFAULT_SPLIT_TIME_SECS("30"),
+    DEFAULT_SPLIT_TIME_SECS("15"),
     DEFAULT_TSTAMP_DATE_FORMAT("YYYY-MM-dd'T'HH:mm:ss.SSSX"),
     DEFAULT_TSTAMP_COLUMN_IDX("0"),
     DEFAULT_DATA_COLUMN_IDX("5"),

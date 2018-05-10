@@ -10,7 +10,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath org.mtahq.csv.splitter.CSVSplitter /Users/mnilsen/xethru/xethru_recording_20180424_093503_c3ca18e4-9b4c-4ff1-b484-1bfec5030e12/xethru_presence_movinglist_20180424_093504.csv</exec.args>
+                <exec.args>-classpath %classpath org.mtahq.csv.splitter.CSVSplitter input_042418 out_042418 labels_042418.csv</exec.args>
                 <exec.executable>java</exec.executable>
                 <exec.workingdir>/Users/mnilsen/NetBeansProjects/CSVSplitter</exec.workingdir>
             </properties>
@@ -25,7 +25,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath org.mtahq.csv.splitter.CSVSplitter /Users/mnilsen/xethru/xethru_recording_20180424_093503_c3ca18e4-9b4c-4ff1-b484-1bfec5030e12/xethru_presence_movinglist_20180424_093504.csv</exec.args>
+                <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath org.mtahq.csv.splitter.CSVSplitter input_042418 out_042418 labels_042418.csv</exec.args>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
                 <exec.workingdir>/Users/mnilsen/NetBeansProjects/CSVSplitter</exec.workingdir>
@@ -41,7 +41,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath ${packageClassName} /Users/mnilsen/xethru/xethru_recording_20180424_093503_c3ca18e4-9b4c-4ff1-b484-1bfec5030e12/xethru_presence_movinglist_20180424_093504.csv</exec.args>
+                <exec.args>-classpath %classpath org.mtahq.csv.splitter.CSVSplitter input_042418 out_042418 labels_042418.csv</exec.args>
                 <exec.executable>java</exec.executable>
                 <exec.workingdir>/Users/mnilsen/NetBeansProjects/CSVSplitter</exec.workingdir>
             </properties>
